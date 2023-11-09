@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: personal-info
+spec:
+  containers:
+  - name: ubuntu-container
+    image: ubuntu
+    command : ["/bin/sleep", "infinity"]
+    env:
+    - name: myName
+      value: Aizhan
+    - name: myDream
+      value: visitting Mekka with parents
+    - name: MyFavFood
+      value: kotlets

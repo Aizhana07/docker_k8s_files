@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: weird-deployment
+ labels:
+   app: nginx
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: nginx
+     weird: 'true'
+ template:
+   metadata:
+     labels:
+       app: nginx
+       weird: 'true'
+   spec:
+     containers:
+     - name: weird-container
+       image: nginx:1.24.0
+       ports:
+       - containerPort: 80
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxUnavailable: 50%
