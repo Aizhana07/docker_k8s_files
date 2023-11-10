@@ -1,0 +1,22 @@
+<!-- Create an nginx deployment on K8S that uses a secret object to store and expose an environment variable to the nginx pod.
+
+Step1.
+ 	Create a secret.
+            -  encode your secret value in base64
+			- value should ве "FIRST-NAME_AGE
+            *  example - Sam 25
+            *  save the base 24 value. You will need it for creating the secret
+			-create a secret called my_secret in a declarative way
+			- Key should ве my_age
+			- value should be encoded value from the previous step.
+	-		 apply the secret to your cluster, make sure that the secret is created
+- Step2. 
+ 		-Create a deployment that uses the secret
+			- create a file named nginx-deploymnet.yaml
+			replicasets =2
+			image = nginx
+
+-Step з
+			Verity the pod environment Variable in the pod. 
+- After the pod is up and running, exec into the pods to verify the value of an environment variable
+- You should be able able to create a K8S secret and a deployment, then verily that the secret is correctly injected into the nginx pod as environment variable. -->
